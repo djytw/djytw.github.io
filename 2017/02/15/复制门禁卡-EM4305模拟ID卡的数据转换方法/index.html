@@ -4,7 +4,7 @@
     
     <title>
         
-            Hello World | 
+            复制门禁卡--EM4305模拟ID卡的数据转换方法 | 
         
         DJYTW&#39;s Blog
     </title>
@@ -22,9 +22,9 @@
     <meta name="author" content="djytw">
      
     
-    <meta name="description" content="每次做一个新博客的原因都是之前的免费主机挂了，一直靠谱的Hostinger最近基本上不去。所以果断放弃PHP，抱起GitHub的大腿，用起静态博客了…">
+    <meta name="description" content="EM4305有很多强大的功能，比如加密或者写保护。但是如何用一个512bit的EM4305模拟一张普通的ID卡(EM4100)?">
     
-    <meta name="keywords" content="djytw, djytw.github.io, 概述, thoughts">
+    <meta name="keywords" content="djytw, djytw.github.io, C语言, ID卡, RFID">
 
     <!--iOS -->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -45,7 +45,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://djytw.github.io">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Hello World | DJYTW&#39;s Blog">
+    <meta property="og:title" content="复制门禁卡--EM4305模拟ID卡的数据转换方法 | DJYTW&#39;s Blog">
     <meta property="og:description" content="djytw的个人博客 | djytw&#39;s blog">
 
     <!--[if lte IE 9]>
@@ -262,7 +262,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
-        
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#EM4305及普通ID卡概述"><span class="post-toc-number">1.</span> <span class="post-toc-text">EM4305及普通ID卡概述</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#工作模式"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">工作模式</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#数据存储形式"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">数据存储形式</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#数据计算方法"><span class="post-toc-number">2.</span> <span class="post-toc-text">数据计算方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#配置信息格式Page4"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">配置信息格式Page4</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#ID卡内容page5-page6"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">ID卡内容page5,page6</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#C语言实现"><span class="post-toc-number">3.</span> <span class="post-toc-text">C语言实现</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#准备"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">准备</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#第一步-计算数据"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">第一步 计算数据</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#第二步-翻转数据"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">第二步 翻转数据</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#程序下载"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">程序下载</span></a></li></ol></li></ol>
 
         <!--
         <li class="mdl-menu__item">
@@ -298,7 +298,7 @@
         
     
             <p class="article-headline-p">
-                Hello World
+                复制门禁卡--EM4305模拟ID卡的数据转换方法
             </p>
         </div>
 
@@ -317,7 +317,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>djytw</strong>
-        <span>2月 11, 2017</span>
+        <span>2月 15, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -341,7 +341,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/概述/">概述</a>
+        <a class="post_tag-link" href="/tags/C语言/">C语言</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/ID卡/">ID卡</a>
     </ul>
     
 
@@ -357,7 +357,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Hello World&url=http://djytw.github.io//2017/02/11/hello-world/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=复制门禁卡--EM4305模拟ID卡的数据转换方法&url=http://djytw.github.io//2017/02/15/复制门禁卡-EM4305模拟ID卡的数据转换方法/index.html&pic=&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -366,7 +366,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Hello World&url=http://djytw.github.io//2017/02/11/hello-world/index.html&via=djytw" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=复制门禁卡--EM4305模拟ID卡的数据转换方法&url=http://djytw.github.io//2017/02/15/复制门禁卡-EM4305模拟ID卡的数据转换方法/index.html&via=djytw" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -375,7 +375,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://djytw.github.io//2017/02/11/hello-world/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://djytw.github.io//2017/02/15/复制门禁卡-EM4305模拟ID卡的数据转换方法/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -384,7 +384,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://djytw.github.io//2017/02/11/hello-world/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://djytw.github.io//2017/02/15/复制门禁卡-EM4305模拟ID卡的数据转换方法/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -408,7 +408,34 @@
                 <!-- Post Content -->
                 <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>每次做一个新博客的原因都是之前的免费主机挂了，一直靠谱的Hostinger最近基本上不去。所以果断放弃PHP，抱起GitHub的大腿，用起静态博客了…<br><a id="more"></a><br>然后就用上了挺有名的<a href="http://hexo.io" target="_blank" rel="external">Hexo</a>博客框架，然后看到了挺好看的<a href="https://github.com/viosey/hexo-theme-material" target="_blank" rel="external">Material</a>主题，稍微改了改CSS里卡片的透明的和移动端的卡片高度，增加了一个侧边栏里看我的GitHub项目的功能，就上线了= =<br>希望这次能用的时间长点(Git应该不会挂吧= =)，穷人的生活，哎~</p>
+        <p>EM4305有很多强大的功能，比如加密或者写保护。但是如何用一个512bit的EM4305模拟一张普通的ID卡(EM4100)?<br><a id="more"></a></p>
+<h4 id="EM4305及普通ID卡概述"><a href="#EM4305及普通ID卡概述" class="headerlink" title="EM4305及普通ID卡概述"></a>EM4305及普通ID卡概述</h4><h5 id="工作模式"><a href="#工作模式" class="headerlink" title="工作模式"></a>工作模式</h5><p>EM4305有两种工作模式，Default Read与Forward Link Communication模式。在卡片接近读卡器时，线圈中产生电流。当加在EM4305的电压超过门限电压POR以后，芯片开始初始化。即芯片读取Page4中的配置信息，然后开始Default Read模式。</p>
+<p>在Default Read模式下，芯片从Page5开始不断地发送卡片上的信息，直到<a href="#配置信息格式Page4">配置信息</a>中规定的LWR(Last Default Read Word)，即发送的最后一个Page。发送完最后一个Page之后，芯片又重新开始发送Page5，中间没有间断。同时，芯片会检测读卡器是否发来命令。如果读卡器的电磁场停止超过Tmono(Typ. 40μs)，芯片就会停止Default Read模式并等待读卡器发送命令。执行完命令后，芯片又会恢复Default Read模式。</p>
+<p>普通的ID卡(EM4100)只有一种工作模式。当放置在电磁场中，线圈产生电流，芯片供电后，循环往复的发送芯片存储的64bit数据，直到线圈远离电磁场，电流停止。<br>门禁卡读卡器只可以发出不变的电磁场并读取芯片发来的数据。如果把EM4305卡放置于普通ID卡读卡器上，EM4305只会进入Default Read模式，即主动发送数据，因此只要设置好存储数据即可。</p>
+<h5 id="数据存储形式"><a href="#数据存储形式" class="headerlink" title="数据存储形式"></a>数据存储形式</h5><p>EM4305一共512bit存储空间，共分为16个Page(Page0 - Page15)，每个Page 32bit，也就是8位16进制数。其中Page4是配置信息存储的位置，而Default Read模式下发送的数据是Page5 - Page13的数据。<em>需要注意的是，芯片是the LSB principle is always respected，即所有数据都是倒着存的。</em> <strong>比如存储123这个数据，转换一下就是0x0000007b(二进制是…00001111011)存储的时候要倒过来，即11011110000…十六进制是0xde000000。</strong><br>因为用不到加密等其他高级功能，所以不讨论Page4-Page13以外的内容。<br>
+<img src="1.png" style="max-width:450px;width:100%;">
+</p>
+<h4 id="数据计算方法"><a href="#数据计算方法" class="headerlink" title="数据计算方法"></a>数据计算方法</h4><h5 id="配置信息格式Page4"><a href="#配置信息格式Page4" class="headerlink" title="配置信息格式Page4"></a>配置信息格式Page4</h5><p>Page4里存储了许多信息，包括卡的调制格式，传输速率，发送的Page还有加密功能的设置。为了描述方便，把page4的32bit信息定义为co0,co1,…,co31。</p>
+<p>co0-co5是存储传输速率的，co6-co9是存储调制格式的。一般使用Manchester RF/64，所以co0-co9就是1111,1010,00</p>
+<p>co14-co17是存储LWR信息，即最后传输的Page。这个数值只能是5-13，否则卡不会输出任何一个Page。在Default模式下，芯片将循环发送第五页到这个定义的最后页的数据。这四个数也遵循LSB，比如要发送到12页，即1100，存储的数据co14-co17是0011。因为id卡是64bit，所以只要用两个page就可以模拟，所以LWR=6，芯片循环发送page5,6的信息。此时co14-17=0110</p>
+<p>其他位都用不到，就补0。最后按LSB重写一下(每8bit翻转)就是0x5F800100。</p>
+<h5 id="ID卡内容page5-page6"><a href="#ID卡内容page5-page6" class="headerlink" title="ID卡内容page5,page6"></a>ID卡内容page5,page6</h5><p>ID卡中信息在上一篇中讲过，即开头有9bit的1。接下来是4bit数据+1bit偶检验的两位版本号和八位id号。最后是4个列校验，最后一位是停止位0。</p>
+<p>EM4305模拟id卡也是把同样的64bit存在page5,6中。重点是如何通过id号码计算出这64bit数据。开始9个1不用考虑，接下来10bit版本号可以直接写0，因为大部分读卡器不检测这一部分，而且id号码也看不出版本号。剩下的部分也不难，通过一个例子来说明。</p>
+<p>还是那张卡，0006381769，转换成16进制是0x006160c9，加上校验码，就是<br><blockquote><p>0000 0<br>0000 0<br>0110 0<br>0001 1<br>0110 0<br>0000 0<br>1100 0<br>1001 0</p>
+</blockquote>　　还有列校验和结束符<blockquote><p>0100 0</p>
+</blockquote>　　就完成了。<br>　　把所有信息列出来，就是<blockquote><p>1111,1111,1000,0000,0000,0000,0000,0011,<br>0000,0110,1100,0000,0110,0010,0100,1000</p>
+</blockquote>　　每8bit翻转，就是<blockquote><p>1111,1111,0000,0001,0000,0000,1100,0000,<br>0110,0000,0000,0011,0100,0110,0001,0010</p>
+</blockquote>　　转换为16进制，即<blockquote><p>0xFF0100C0<br>0x60034612</p>
+</blockquote>　　所以在卡中写入的数据为<blockquote><p>Page4: 5F800100<br>Page5: FF0100C0<br>Page6: 60034612</p>
+</blockquote></p>
+<h4 id="C语言实现"><a href="#C语言实现" class="headerlink" title="C语言实现"></a>C语言实现</h4><h5 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h5><p>Page4的值一般是固定的，而Page5,6的值需要计算。这三个数都是32bit的数，所以需要用unsigned int存储。快速取出从右往左第k+1位的数字可以使用<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">(ID&gt;&gt;k*<span class="number">4</span>)&amp;<span class="number">0xf</span>       <span class="comment">//十六进制</span></div><div class="line">(ID&gt;&gt;k)&amp;<span class="number">1</span>           <span class="comment">//二进制</span></div></pre></td></tr></table></figure>Page5的开头永远是9个1和10个0，转换为16进制为0x7fc00，所以可以初始化Page5=0x7fc00。</p>
+<h5 id="第一步-计算数据"><a href="#第一步-计算数据" class="headerlink" title="第一步 计算数据"></a>第一步 计算数据</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(i=<span class="number">7</span>;i&gt;=<span class="number">0</span>;i--)&#123; </div><div class="line">    ecc=<span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span>(j=<span class="number">3</span>;j&gt;=<span class="number">0</span>;j--)&#123;              <span class="comment">//32位2进制数，从高到低写入page中</span></div><div class="line">        t=(id&gt;&gt;i*<span class="number">4</span>+j)&amp;<span class="number">1</span>;            <span class="comment">//t是当前位</span></div><div class="line">        ecc+=t;                     <span class="comment">//ecc是行校验码</span></div><div class="line">        ecc_r[<span class="number">3</span>-j]+=t;              <span class="comment">//ecc_r[i]是第i列的列校验码</span></div><div class="line">        write(t);</div><div class="line">    &#125;</div><div class="line">    write(ecc&amp;<span class="number">1</span>);                   <span class="comment">//每4个循环写入一次校验码</span></div><div class="line">    </div><div class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++)&#123;					</div><div class="line">        write(ecc_r[i]&amp;<span class="number">1</span>);          <span class="comment">//写入列校验码</span></div><div class="line">    &#125;</div><div class="line">    write(<span class="number">0</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>其中write(x)的功能就是把x写入当前的page中，可以用如下方法实现，pos的初始值设为19（因为page5前面有固定的19位数据），然后每次写入一次数据pos+1。<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">#define write(x) if(pos&gt;=32)&#123; \</div><div class="line">                     page6&lt;&lt;=1; \</div><div class="line">                     page6+=(x); \</div><div class="line">                 &#125;else&#123; \</div><div class="line">                     page5&lt;&lt;=1; \</div><div class="line">                     page5+=(x); \</div><div class="line">                     pos++; \</div><div class="line">                 &#125;</div></pre></td></tr></table></figure></p>
+<h5 id="第二步-翻转数据"><a href="#第二步-翻转数据" class="headerlink" title="第二步 翻转数据"></a>第二步 翻转数据</h5><p>翻转的过程可视为二进制下<br><blockquote><p>(a0,a1,a2,a3,a4,a5,a6,a7) -&gt; (a7,a6,a5,a4,a3,a2,a1,a0)</p>
+</blockquote><br>　　每一位都翻转需要移动8次，计算次数较多，所以可以使用如下两步来解决问题：<br>　　　　1.十六进制相邻两位互换<br><blockquote><p>(a0,a1,a2,a3),(a4,a5,a6,a7) -&gt; (a4,a5,a6,a7),(a0,a1,a2,a3);</p>
+</blockquote><br>　　　　2.每个十六进制数自身翻转<br><blockquote><p>(a4,a5,a6,a7),(a0,a1,a2,a3) -&gt; (a7,a6,a5,a4),(a3,a2,a1,a0)</p>
+</blockquote><br>只需要一个预定义好的自身翻转数组即可。比如0001-&gt;1000 (1变8) 就令tr[1]=8。最终tr数组为：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> tr[]=&#123;<span class="number">0</span>, <span class="number">8</span>, <span class="number">4</span>, <span class="number">12</span>, <span class="number">2</span>, <span class="number">10</span>, <span class="number">6</span>, <span class="number">14</span>, <span class="number">1</span>, <span class="number">9</span>, <span class="number">5</span>, <span class="number">13</span>, <span class="number">3</span>, <span class="number">12</span>, <span class="number">7</span>, <span class="number">15</span>&#125;;</div></pre></td></tr></table></figure><br>翻转代码为：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">t=page5;page5=<span class="number">0</span>;</div><div class="line"><span class="keyword">for</span>(i=<span class="number">3</span>;i&gt;=<span class="number">0</span>;i--)&#123;</div><div class="line">    page5&lt;&lt;=<span class="number">4</span>;</div><div class="line">    page5+=tr[(t&gt;&gt;i*<span class="number">8</span>)&amp;<span class="number">0xf</span>];</div><div class="line">    page5&lt;&lt;=<span class="number">4</span>;</div><div class="line">    page5+=tr[(t&gt;&gt;i*<span class="number">8</span>+<span class="number">4</span>)&amp;<span class="number">0xf</span>];</div><div class="line">&#125;</div><div class="line">t=page6;page6=<span class="number">0</span>;</div><div class="line"><span class="keyword">for</span>(i=<span class="number">3</span>;i&gt;=<span class="number">0</span>;i--)&#123;</div><div class="line">    page6&lt;&lt;=<span class="number">4</span>;</div><div class="line">    page6+=tr[(t&gt;&gt;i*<span class="number">8</span>)&amp;<span class="number">0xf</span>];</div><div class="line">    page6&lt;&lt;=<span class="number">4</span>;</div><div class="line">    page6+=tr[(t&gt;&gt;i*<span class="number">8</span>+<span class="number">4</span>)&amp;<span class="number">0xf</span>];</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h5 id="程序下载"><a href="#程序下载" class="headerlink" title="程序下载"></a>程序下载</h5><p><a href="EM4305.c">EM4305.c</a></p>
 
     
 
@@ -431,19 +458,19 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/02/11/初探RFID--复制门禁卡/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
+    
+        <a href="/2017/02/14/EM4305RW-Android/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
     
 </nav>
 
