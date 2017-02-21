@@ -123,7 +123,14 @@
         color: #0097A7 !important;
     }
 
-    #post_entry-right-info,
+    #post_entry-right-info *{
+        color: #999 !important;
+        text-align:left !important;
+        overflow:hidden;
+    }
+    #post_entry-right-info i{
+        font-size:13px !important;
+    }
     .sidebar-colored .sidebar-nav li:hover > a,
     .sidebar-colored .sidebar-nav li:hover > a i,
     .sidebar-colored .sidebar-nav li > a:hover,
@@ -268,7 +275,7 @@
     </div>
     <!-- Post_entry Info-->
     <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 " >
             <!-- Author Avatar -->
             <div id="author-avatar">
                 <img src="/img/avatar.jpg" width="44px" height="44px" alt="djytw's avatar">
@@ -278,15 +285,23 @@
                 <span>2月 12, 2017</span>
             </div>
         </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/网络设备/">网络设备</a>
-            </span>
-
+        <div id="post_entry-right-info" style="margin:0px;padding:20px 20px 0 0;height:70px">
+            <div>
+                <div style="width:999px;overflow-x:auto">
+                    <i class="material-icons">chrome_reader_mode</i>
+                    <span>
+                    <a class="category-link" href="/categories/网络设备/">网络设备</a>
+                    </span>
+                </div>
+                <div style="width:999px;overflow-x:auto">
+                    <i class="material-icons">local_offer</i>
+                    <span>
+                    <a class="tag-link" href="/tags/shell/">shell</a>, <a class="tag-link" href="/tags/概述/">概述</a>, <a class="tag-link" href="/tags/网络设备/">网络设备</a>
+                    </span>
+                </div>
+            </div>
             
 
-            <!-- Post Views -->
             <span class="post_entry-views">
             </span>
         </div>
@@ -418,7 +433,7 @@
     
         <li class="dropdown">
             <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
-                <i class="material-icons sidebar-material-icons">bookmark</i>
+                <i class="material-icons sidebar-material-icons">local_offer</i>
                 标签
                 <b class="caret"></b>
             </a>
