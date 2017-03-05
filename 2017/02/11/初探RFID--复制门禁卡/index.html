@@ -433,9 +433,7 @@ var article_id=2;
 
     
 </div>
-<script>
-$.get("http://djytw.cf/count/?article_id="+article_id);
-</script>
+
 
                 
 
@@ -682,6 +680,12 @@ $.get("http://djytw.cf/count/?article_id="+article_id);
                     
 
                     <!--Footer-->
+<script>
+$(document).ready(function(){
+	var article_id;
+	$.get("http://djytw.cf/count/?article_id="+article_id);
+});
+</script>
 <footer class="mdl-mini-footer" id="bottom">
     
         <!-- Paradox Footer Left Section -->
