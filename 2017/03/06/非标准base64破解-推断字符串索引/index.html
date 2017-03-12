@@ -425,11 +425,7 @@
 </blockquote></p>
 <h5 id="写代码"><a href="#写代码" class="headerlink" title="写代码"></a>写代码</h5><p>写一个最简单的代码，完成这种自定义索引到标准base64的变换：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">#include &lt;stdio.h&gt;</div><div class="line">#include &lt;string.h&gt;</div><div class="line"></div><div class="line">int main()&#123;</div><div class="line">	char nor[]=&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=&quot;;</div><div class="line">	char new[]=&quot;3yxX4IB+/oNaEi8YCGzT02FOVZ67LeQ5nfcwhJqgPWlmMKSpuAU=9DbHdkrsj1tRv&quot;;</div><div class="line">	int i,j;</div><div class="line">	while(1)&#123;</div><div class="line">		char str[200],c;</div><div class="line">		scanf(&quot;%s&quot;,str);</div><div class="line">		for(i=0;i&lt;strlen(str);i++)&#123;</div><div class="line">			c=str[i];</div><div class="line">			for(j=0;j&lt;65;j++)&#123;</div><div class="line">				if(c==new[j])&#123;</div><div class="line">					str[i]=nor[j];</div><div class="line">					break;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">			if(j==65)str[i]=&apos;?&apos;;</div><div class="line">		&#125;</div><div class="line">		printf(&quot;%s\n&quot;,str);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h5 id="继续推断"><a href="#继续推断" class="headerlink" title="继续推断"></a>继续推断</h5><p>随便找几条进行转换<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">ssU7k6rQkW61ssU7kPqgrNBE/8QSPQQCfgVSa3vv 77yb5a6e5pa977yb5omn6KGMIOeuoeeQhnYuLA==</div><div class="line">[动]管理；执行；实施                       ；实施；执行 管理v.,</div><div class="line">ssU7kZb6kPUyssU7rZq4kkb3/8qswtqZf+VSa3vv 77yb5Z2a5oyB77yb6ZmE552AIOm7j+mZhHYuLA==</div><div class="line">[动]黏附；附着；坚持                       ；坚持；附着 黏附v.,</div><div class="line">ssU/k6z4ssUossU7kr8PkPb5/86TWSzjWBdSa3vv 77yI5aSE77yJ77yb56Oo5o2fIOaTpuS8pG4uLA==</div><div class="line">[名]擦伤；磨损（处）                       （处）；磨损 擦伤n.,</div><div class="line">k6rEkVFPkZUuk6tkkZUussU7ksSeacunVFGb 5a6M5YWo5Zyw5a+55Zyw77yb57udLiwgYWR2</div><div class="line">[副]绝对地；完全地                     完全地对地；绝., adv</div></pre></td></tr></table></figure><br>可以看出，词性是通过“n. ,”这种形式表示的，而且字符串在编码前确实进行了打乱。具体怎么打乱的，就不讨论了。</p>
-<h4 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h4><p><a href="https://en.wikipedia.org/wiki/Base64" target="_blank" rel="external">base64 - Wiki</a><br>
-<script type="text/javascript">
-var article_id=6;
-</script>
-</p>
+<h4 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h4><p><a href="https://en.wikipedia.org/wiki/Base64" target="_blank" rel="external">base64 - Wiki</a></p>
 
     
 
@@ -677,7 +673,7 @@ var article_id=6;
 <script>
 $(document).ready(function(){
 	var article_id;
-	$.get("http://djytw.cf/count/?article_id="+article_id);
+	$.get("http://djytw.cf/count/?article_id="+escape(location.href));
 });
 </script>
 <footer class="mdl-mini-footer" id="bottom">

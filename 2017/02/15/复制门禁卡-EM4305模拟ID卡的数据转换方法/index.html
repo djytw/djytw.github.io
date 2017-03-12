@@ -445,11 +445,7 @@
 <h4 id="开发更多用途…"><a href="#开发更多用途…" class="headerlink" title="开发更多用途…"></a>开发更多用途…</h4><p>EM4305有512bit存储空间，只用来克隆一张ID卡实在是太浪费了。因为要带好多张门禁卡，所以就突发奇想把他们都写在同一张EM4305上，是不是就能一卡多刷了呢？</p>
 <p>理论上是可以的。因为EM4305会循环发送page5-LWR中的数据。而读卡器是遇到连续9个1就会开始读卡。所以写入多个数据的时候，读卡器最先会读到写入的第一个ID，如果不匹配的话，读卡器会报错，但是EM4305会继续发送信息。只要读卡器反应速度够快，EM4305发送的第二个ID也会被读卡器读到，一直到匹配成功。</p>
 <p>写入数据时，需要注意LWR的更改。之前因为只有一个ID，所以只需要两个Page，因此LWR=6,Page4=5F800100。如果要写入两个ID，就需要4个page，LWR=8，这时co14-co17就是0001，Page4=5F000200。然后把两个ID分别写入Page5,6和Page7,8。因为Page5和Page7的开头都有9个1所以读卡器只要读到这部分都会开始接收ID。</p>
-<p>实际测试通过。读卡器会不断的循环提示失败和成功。这么做也有个缺点，如果写入的卡太多，每次都要等错误好几次才能成功开门。<br>
-<script type="text/javascript">
-var article_id=5;
-</script>
-</p>
+<p>实际测试通过。读卡器会不断的循环提示失败和成功。这么做也有个缺点，如果写入的卡太多，每次都要等错误好几次才能成功开门。</p>
 
     
 
@@ -705,7 +701,7 @@ var article_id=5;
 <script>
 $(document).ready(function(){
 	var article_id;
-	$.get("http://djytw.cf/count/?article_id="+article_id);
+	$.get("http://djytw.cf/count/?article_id="+escape(location.href));
 });
 </script>
 <footer class="mdl-mini-footer" id="bottom">

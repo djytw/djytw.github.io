@@ -423,11 +423,7 @@
 <img src="-ad4fa8f8950c60e.jpg">
 </p>
 <h4 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h4><p><a href="em4205-4305_ds.pdf">EM4305 Datasheet</a><br>　　<a href="rfid-card-125khz-em4100-datasheet.pdf">EM4100 Datasheet</a></p>
-<h4 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h4><p>后面会写ID号到写在EM4305上的数据的计算方法。　<strong>已经完成</strong><a href="/2017/02/15/复制门禁卡-EM4305模拟ID卡的数据转换方法/">传送门</a><br>　　顺便开发个安卓程序用otg写卡也是极好的。  <strong>已经完成</strong><a href="/2017/02/14/EM4305RW-Android/">传送门</a><br>　　EM4305也可以写入多张ID卡的数据以实现一卡刷多个门 <a href="/2017/02/15/复制门禁卡-EM4305模拟ID卡的数据转换方法/#开发更多用途…">传送门</a><br>
-<script type="text/javascript">
-var article_id=2;
-</script>
-</p>
+<h4 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h4><p>后面会写ID号到写在EM4305上的数据的计算方法。　<strong>已经完成</strong><a href="/2017/02/15/复制门禁卡-EM4305模拟ID卡的数据转换方法/">传送门</a><br>　　顺便开发个安卓程序用otg写卡也是极好的。  <strong>已经完成</strong><a href="/2017/02/14/EM4305RW-Android/">传送门</a><br>　　EM4305也可以写入多张ID卡的数据以实现一卡刷多个门 <a href="/2017/02/15/复制门禁卡-EM4305模拟ID卡的数据转换方法/#开发更多用途…">传送门</a></p>
 
     
 
@@ -683,7 +679,7 @@ var article_id=2;
 <script>
 $(document).ready(function(){
 	var article_id;
-	$.get("http://djytw.cf/count/?article_id="+article_id);
+	$.get("http://djytw.cf/count/?article_id="+escape(location.href));
 });
 </script>
 <footer class="mdl-mini-footer" id="bottom">

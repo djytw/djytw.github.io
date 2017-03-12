@@ -414,11 +414,7 @@
                 <!-- Post Content -->
                 <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>每次做一个新博客的原因都是之前的免费主机挂了，一直靠谱的Hostinger最近基本上不去。所以果断放弃PHP，抱起GitHub的大腿，用起静态博客了…<br><a id="more"></a><br>然后就用上了挺有名的<a href="http://hexo.io" target="_blank" rel="external">Hexo</a>博客框架，然后看到了挺好看的<a href="https://github.com/viosey/hexo-theme-material" target="_blank" rel="external">Material</a>主题，稍微改了改CSS里卡片的透明的和移动端的卡片高度，增加了一个侧边栏里看我的GitHub项目的功能，就上线了= =<br>希望这次能用的时间长点(Git应该不会挂吧= =)，穷人的生活，哎~<br>
-<script type="text/javascript">
-var article_id=1;
-</script>
-</p>
+        <p>每次做一个新博客的原因都是之前的免费主机挂了，一直靠谱的Hostinger最近基本上不去。所以果断放弃PHP，抱起GitHub的大腿，用起静态博客了…<br><a id="more"></a><br>然后就用上了挺有名的<a href="http://hexo.io" target="_blank" rel="external">Hexo</a>博客框架，然后看到了挺好看的<a href="https://github.com/viosey/hexo-theme-material" target="_blank" rel="external">Material</a>主题，稍微改了改CSS里卡片的透明的和移动端的卡片高度，增加了一个侧边栏里看我的GitHub项目的功能，就上线了= =<br>希望这次能用的时间长点(Git应该不会挂吧= =)，穷人的生活，哎~</p>
 
     
 
@@ -666,7 +662,7 @@ var article_id=1;
 <script>
 $(document).ready(function(){
 	var article_id;
-	$.get("http://djytw.cf/count/?article_id="+article_id);
+	$.get("http://djytw.cf/count/?article_id="+escape(location.href));
 });
 </script>
 <footer class="mdl-mini-footer" id="bottom">
